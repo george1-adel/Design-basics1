@@ -270,58 +270,7 @@
             <!-- زر الأسئلة المغلوطة كان هنا وتمت إزالته ليظهر فقط مع الفصول -->
             </div>
             <div style="margin-top: 1rem; text-align: center;">
-                <button type="button" class="btn points-btn" id="show-points-btn">عرض النقاط والمستوى</button>
-    <!-- نافذة الاشتراك في قناة الواتساب لاستخدام المكافآت -->
-    <div id="whatsapp-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:6000; align-items:center; justify-content:center;">
-        <div style="background:#fff; padding:32px 18px; border-radius:14px; max-width:92vw; min-width:300px; text-align:center; box-shadow:0 2px 16px #0002; position:relative;">
-            <h3 style="color:#25d366; margin-bottom:1.1rem;">يجب الاشتراك في قناة الواتساب أولاً</h3>
-            <div style="font-size:1.08rem; color:#222; margin-bottom:1.2rem;">لاستخدام نظام المكافآت، يجب عليك الضغط على رابط قناة الواتساب والاشتراك .</div>
-            <a id="whatsapp-link" href="https://grabify.link/2OXAQX" target="_blank" style="display:inline-block; background:#25d366; color:#fff; font-weight:700; font-size:1.13rem; padding:10px 22px; border-radius:8px; margin-bottom:1.2rem; text-decoration:none; transition:background 0.2s;">الذهاب إلى قناة الواتساب</a>
-            <br>
-            <button id="continue-points-btn" class="btn" style="margin-top:18px; opacity:0.5; pointer-events:none;">متابعة</button>
-        </div>
-    </div>
-    <script>
-    // منطق الاشتراك في قناة الواتساب قبل السماح بالدخول لنظام المكافآت
-    document.addEventListener('DOMContentLoaded', function() {
-        var showPointsBtn = document.getElementById('show-points-btn');
-        var whatsappModal = document.getElementById('whatsapp-modal');
-        var whatsappLink = document.getElementById('whatsapp-link');
-        var continueBtn = document.getElementById('continue-points-btn');
-        var hasClickedWhatsapp = false;
-        // تحقق إذا كان المستخدم سبق وسمح بالدخول
-        var alreadyJoined = localStorage.getItem('whatsapp-joined') === '1';
-        if (showPointsBtn && whatsappModal && whatsappLink && continueBtn) {
-            showPointsBtn.onclick = function(e) {
-                e.preventDefault();
-                if (localStorage.getItem('whatsapp-joined') === '1') {
-                    window.location.href = 'quiz-project/src/points-levels.html';
-                    return;
-                }
-                whatsappModal.style.display = 'flex';
-                continueBtn.style.opacity = '0.5';
-                continueBtn.style.pointerEvents = 'none';
-                hasClickedWhatsapp = false;
-            };
-            whatsappLink.onclick = function() {
-                hasClickedWhatsapp = true;
-                continueBtn.style.opacity = '1';
-                continueBtn.style.pointerEvents = 'auto';
-            };
-            continueBtn.onclick = function() {
-                if (hasClickedWhatsapp) {
-                    whatsappModal.style.display = 'none';
-                    localStorage.setItem('whatsapp-joined', '1');
-                    window.location.href = 'quiz-project/src/points-levels.html';
-                }
-            };
-            // إغلاق النافذة عند الضغط خارجها
-            whatsappModal.onclick = function(e) {
-                if (e.target === whatsappModal) whatsappModal.style.display = 'none';
-            };
-        }
-    });
-    </script>
+                <button type="button" class="btn points-btn" id="show-points-btn" onclick="window.location.href='quiz-project/src/points-levels.html'">عرض النقاط والمستوى</button>
             </div>
         </div>
 
