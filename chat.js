@@ -141,7 +141,7 @@ window.addEventListener('load', function() {
     }
 
     // Gemini API and local logic integration
-    const API_KEY = "AIzaSyB-z8p9hRR96shayxlrqKRqfEQMuLO7PTk";
+    const API_KEY = "AIzaSyCoIIbDv5V0iSnTrFqtQ2G3GRnZepOGDYc"; // AIzaSyCoIIbDv5V0iSnTrFqtQ2G3GRnZepOGDYc
     const MODEL_NAME = "gemini-1.5-flash-latest";
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${API_KEY}`;
     let conversationHistory = [];
